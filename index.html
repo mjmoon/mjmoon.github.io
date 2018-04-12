@@ -1,0 +1,39 @@
+---
+---
+<!DOCTYPE HTML>
+<html>
+    {% include head.html %}
+    <body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					{% include header.html %}
+                    <section id="sites">
+                        <header class="major">
+                            <h2>
+                              <a>My sites</a>
+                            </h2>
+                        </header>
+                        <div class="posts">
+                            {% for web in site.webs %}
+                            <article>
+                                <div class="content">
+                                    <h3><a href={{ web.link }} target="_blank">{{ web.title }}</a></h3>
+                                    <p>
+                                        {{ web.content }}
+                                    </p>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        </div>
+                    </section>
+				</div>
+			</div>
+        </div>
+        <!-- Scripts -->
+		{% include scripts.html %}
+	</body>
+</html>
